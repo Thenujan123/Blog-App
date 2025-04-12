@@ -1,6 +1,8 @@
+"use client";
 import React from "react";
 import { IoLogoGithub } from "react-icons/io";
 import { FcGoogle } from "react-icons/fc";
+import { signIn } from "next-auth/react";
 const SignInPage = () => {
   return (
     <div className="flex justify-center pt-20">
@@ -8,10 +10,16 @@ const SignInPage = () => {
         <h1 className="text-center text-4xl capitalize font-bold mt-14">
           sign In
         </h1>
-        <div className="mx-auto flex items-center p-4 w-50%] border-1 border-slate-300 rounded-[50px] gap-10 cursor-pointer">
+        <div
+          className="mx-auto flex items-center p-4 w-50%] border-1 border-slate-300 rounded-[50px] gap-10 cursor-pointer"
+          onClick={() => signIn("github")}
+        >
           <IoLogoGithub className="text-4xl" /> <h4>SignIn With GitHub</h4>
         </div>
-        <div className="mx-auto flex items-center p-4 w-50%] border-1 border-slate-300 rounded-[50px] gap-10 cursor-pointer">
+        <div
+          className="mx-auto flex items-center p-4 w-50%] border-1 border-slate-300 rounded-[50px] gap-10 cursor-pointer"
+          onClick={() => signIn("google")}
+        >
           <FcGoogle className="text-4xl" /> <h4>SignIn With Google</h4>
         </div>
       </div>
