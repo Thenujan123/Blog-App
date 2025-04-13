@@ -23,7 +23,7 @@ export const postsData = [
     content: "A new smartphone model with advanced features has been released.",
     author: "John Doe",
     datepublished: "2023-09-20",
-    category: "Mobile",
+    category: "Programming",
     links: ["https://example.com/news1"],
     thumbnail:
       "https://th.bing.com/th/id/OIP.0W6VkJwN3zaDSMr10fYVSQHaE7?cb=iwp&rs=1&pid=ImgDetMain", // ✅ smartphone
@@ -35,7 +35,7 @@ export const postsData = [
       "Artificial intelligence makes a significant breakthrough in healthcare diagnostics.",
     author: "Jane Smith",
     datepublished: "2023-09-19",
-    category: "Healthcare",
+    category: "Programming",
     links: ["https://example.com/news2", "https://example.com/news2-1"],
     thumbnail:
       "https://th.bing.com/th/id/OIP.0W6VkJwN3zaDSMr10fYVSQHaE7?cb=iwp&rs=1&pid=ImgDetMain", // ✅ medical AI
@@ -90,7 +90,7 @@ export const postsData = [
     content: "Learn how to improve speed and efficiency in mobile apps.",
     author: "Daniel Kim",
     datepublished: "2024-12-18",
-    category: "Mobile",
+    category: "Web Dev",
     links: ["https://example.com/news7"],
     thumbnail:
       "https://th.bing.com/th/id/OIP.0W6VkJwN3zaDSMr10fYVSQHaE7?cb=iwp&rs=1&pid=ImgDetMain", // ✅ phone dev
@@ -101,7 +101,7 @@ export const postsData = [
     content: "Startups are transforming the healthcare industry with AI.",
     author: "Emily Wong",
     datepublished: "2025-01-25",
-    category: "Healthcare",
+    category: "Technology",
     links: ["https://example.com/news8"],
   },
   {
