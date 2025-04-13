@@ -4,18 +4,20 @@ import ThumbnailPlaceholder from "../../public/thumbnail-placeholder.png";
 import Link from "next/link";
 import { FaLink } from "react-icons/fa6";
 import DeletePost from "./DeletePost";
+import { getServerSession } from "next-auth/next";
+import { authOptions } from "../api/auth/[...nextauth]/route";
 type PostProps = {
   id: string;
   author: string;
   authorEmail?: string;
   date: string;
   thumbnail?: string;
-  category: string;
+  category?: string;
   title: string;
   content: string;
   links?: string[];
 };
-const PostPage = ({
+const PostPage = async ({
   id,
   author,
   authorEmail,
@@ -26,7 +28,9 @@ const PostPage = ({
   content,
   links,
 }: PostProps) => {
-  const isEditable = true;
+  const session = await getServerSession(authOptions);
+
+  const isEditable = session && session.user?.email === authorEmail;
   return (
     <div className="mt-5 h-[90vh] w-[90%] shadow-2xl p-5">
       <div className="w-full h-full">

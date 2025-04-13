@@ -4,28 +4,33 @@ import { NextRequest, NextResponse } from "next/server";
 export const GET = async (req: NextRequest) => {
   try {
     const url = await req.url;
-    const cat = url.split("categories/")[1];
+    const email = url.split("author/")[1];
 
-    const category = await prisma.category.findMany({
-      where: { catName: cat },
+    const posts = await prisma.user.findUnique({
+      where: { email: email },
       include: {
         posts: {
-          include: { author: true },
-          omit: { createdAt: true, updatedAt: true },
+          omit: {
+            createdAt: true,
+            updatedAt: true,
+          },
+          orderBy: {
+            createdAt: "desc",
+          },
         },
       },
     });
     return NextResponse.json(
       {
         success: true,
-        category,
+        posts,
       },
       { status: 201 }
     );
   } catch (error) {
     return NextResponse.json(
       {
-        message: "couldnt get tghe categories acording to the type",
+        message: "couldnt get tghe posts acording to the emails",
       },
       { status: 500 }
     );
